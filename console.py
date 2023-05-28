@@ -2,18 +2,34 @@
 """ Command Line & Interactive shell for DogPlug """
 import cmd
 from models.base_model import BaseModel
+from models.county import County
+from models.dog import Dog
+from models.groomer import Groomer
+from models.location import Location
+from models.owner import Owner
+from models.review import Review
+from models.service import Service
+from models.town import Town
 from models import storage
 import shlex
 
 
 classes = {
         "BaseModel": BaseModel,
+        "County": County,
+        "Dog": Dog,
+        "Groomer": Groomer,
+        "Location": Location,
+        "Owner": Owner,
+        "Review": Review,
+        "Service": Service,
+        "Town": Town
     }
 
 class DogPlug(cmd.Cmd):
     """ Simple commands processor to test model objects """
     FRIENDS = ['Tony', 'Maiyo', 'Lupin']
-    classes = ['BaseModel']
+    classes = ['BaseModel', 'County', 'Dog', 'Groomer', 'Location', 'Owner', 'Review', 'Service', 'Town']
     prompt = "(DogPlug)"
     intro = "Welcome to DogPlug"
     
@@ -175,11 +191,18 @@ class DogPlug(cmd.Cmd):
     def do_all(self, args):
         """ Display all objects based on the class or not"""
         args = args.split()
+        objs_dict = {}
         if len(args) == 0:
-            print(storage.all())
+            objs = storage.all()
+            for key,value in objs.items():
+                objs_dict[key] = objs[key].to_dict()
+            print(objs_dict)
         else:
             if args[0] in classes:
-                print(storage.all(args[0]))
+                objs = storage.all(args[0])
+                for key,value in objs.items():
+                    objs_dict[key] = objs[key].to_dict()
+                print(objs_dict)
             else:
                 print("**Invalid class name**")
     
@@ -208,17 +231,19 @@ class DogPlug(cmd.Cmd):
         elif args[0] in classes:
             if len(args) > 1:
                 k = args[0] + "." + args[1]
+                all_objs = storage.all()
                 if k in storage.all():
+                    instance = all_objs[k]
                     if len(args) > 2:
                         if len(args) > 3:
                             if args[0] == "Dog" or args[0] == "Service":
-                                if args[2] in integers:
+                                if args[2] == "weight" or args[2] == "age" or args[2] == "price":
                                     try:
                                         args[3] = int(args[3])
                                     except:
                                         args[3] = 0
-                            setattr(storage.all()[k], args[2], args[3])
-                            storage.all()[k].save()
+                            setattr(instance, args[2], args[3])
+                            instance.save()
                         else:
                             print("** value missing **")
                     else:
