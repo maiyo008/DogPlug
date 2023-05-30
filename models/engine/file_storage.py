@@ -74,3 +74,13 @@ class FileStorage():
                     FileStorage.__objects[key] = classes[json_reload[key]["__class__"]](**json_reload[key])
         except Exception as e:
             pass
+    
+    def delete(self, obj=None):
+        """ Delete an object instance if it exists """
+        if obj is not None:
+            key = "{}.{}".format(
+                obj.__class__.__name__,
+                obj.id
+            )
+            if key in FileStorage.__objects:
+                del FileStorage.__objects[key]

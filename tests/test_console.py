@@ -45,6 +45,36 @@ class TestDogPlug(unittest.TestCase):
 
         completions = self.console.complete_create("B", "create B", 0, 8)
         self.assertEqual(completions, ['BaseModel'])
+    
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_do_create(self, mock_stdout):
+        # Test create command
+        self.console.onecmd("create Dog name='Buddy' age=3 weight=10.5")
+        instance_id = mock_stdout.getvalue().strip()
+        self.assertTrue(instance_id)
+
+        # Check if the created instance is stored
+        self.assertIn(f"Dog.{instance_id}", self.console.storage.all())
+
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_do_create_invalid_class(self, mock_stdout):
+        # Test create command with invalid class name
+        self.console.onecmd("create InvalidClass")
+        expected_output = "**Invalid class name**"
+        self.assertEqual(mock_stdout.getvalue().strip(), expected_output)
+
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_do_create_missing_class_name(self, mock_stdout):
+        # Test create command with missing class name
+        self.console.onecmd("create")
+        expected_output = "**class name missing**"
+        self.assertEqual(mock_stdout.getvalue().strip(), expected_output)
+
+    def test_do_create_invalid_params(self):
+        # Test create command with invalid parameters
+        self.console.onecmd("create Dog name='Buddy' age='invalid' weight=10.5")
+        self.assertNotIn("Dog.", self.console.storage.all())
+
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_help_show(self, mock_stdout):
