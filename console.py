@@ -95,10 +95,30 @@ class DogPlug(cmd.Cmd):
         if args[0] not in classes:
             print("**Invalid class name**")
             return False
-        else:
-            model_instance = classes[args[0]]()
-            model_instance.save()
-            print(model_instance.id)
+        
+        # Extracting params
+        params = {}
+        for param in args[1:]:
+            key_value = param.split("=")
+            if len(key_value) == 2:
+                key, value = key_value[0], key_value[1]
+                if value.startswith('"') and value.endswith('"'):
+                    value = value[1:-1].replace('_', ' ')
+                elif '.' in value:
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        continue
+                else:
+                    try:
+                        value = int(value)
+                    except ValueError:
+                        continue
+            params[key] = value
+
+        model_instance = classes[args[0]](**params)
+        model_instance.save()
+        print(model_instance.id)
     
     def help_show(self):
         print('\n'.join([
