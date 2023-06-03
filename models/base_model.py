@@ -5,10 +5,13 @@ The class here is going to be inherited by all the other classes.
 """
 import uuid
 from datetime import datetime
-from models import storage
-
+import models
+from sqlalchemy import Column, String, DateTime
+from sqlalchemy.ext.declarative import declarative_base
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
+
+Base = declarative_base()
 
 class BaseModel():
     """
@@ -16,8 +19,11 @@ class BaseModel():
     model classes. In addition it will handle basic methods to 
     help in serialization of model objects
     """
-   
-
+    if models.storage_type == "db":
+        id = Column(String(40), primary_key=True)
+        created_at = Column(DateTime, default=datetime.utcnow())
+        updated_at = Column(DateTime, default=datetime.utcnow())
+    
     def __init__(self, *args, **kwargs):
         """Initializes every instance of this class
         
@@ -45,7 +51,6 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self)
     
 
     def __str__(self):
@@ -72,6 +77,8 @@ class BaseModel():
             dict_a["created_at"] = dict_a["created_at"].strftime(time)
         if "updated_at" in dict_a  and isinstance(dict_a["updated_at"], datetime):
             dict_a["updated_at"] = dict_a["updated_at"].strftime(time)
+        if "_sa_instance_state" in dict_a:
+            del dict_a["_sa_instance_state"]
         return dict_a
 
 
@@ -80,5 +87,9 @@ class BaseModel():
         Updates when an instance is modified
         """
         self.updated_at = datetime.now()
-        storage.new(self)
-        storage.save()
+        models.storage.new(self)
+        models.storage.save()
+    
+    def delete(self):
+        """ Delete the current instance from the storage """
+        models.storage.delete(self)

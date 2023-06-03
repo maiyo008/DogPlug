@@ -1,10 +1,28 @@
 #!/usr/bin/python3
 """ Owner module"""
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+from models import storage_type
+from sqlalchemy import Column, String
+from sqlalchemy.orm import relationship
 
 
-class Owner(BaseModel):
+class Owner(BaseModel, Base):
     """ Representation of an owner"""
+    if storage_type == "db":
+        __tablename__ = "owners"
+        name = Column(String(100), nullable=False, default="")
+        email = Column(String(40), nullable=False, default="name@gmail.com")
+        contact = Column(String(20), nullable=False, default="")
+        dogs = relationship(
+            "Dog",
+            backref="owner",
+            cascade="all, delete, delete-orphan"
+        )
+        reviews = relationship(
+            "Review",
+            backref="owner",
+            cascade="all, delete, delete-orphan"
+        )
 
     def __init__(self, *args, **kwargs):
         """ Initialize an Owner """
