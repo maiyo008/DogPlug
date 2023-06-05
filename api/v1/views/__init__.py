@@ -8,3 +8,4 @@ from api.v1.views.county import *
 from api.v1.views.dog import *
 from api.v1.views.groomer import *
 from api.v1.views.owner import *
+from api.v1.views.town import *
