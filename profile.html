@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Grooming Profile</title>
+  <link rel="stylesheet" href="styles/profile.css">
+</head>
+<body>
+  <header>
+    <h1>Dog Grooming Profile</h1>
+  </header>
+  <main>
+    <h2>Create Dog Profile</h2>
+    <form id="dog-profile-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="breed">Breed:</label>
+      <input type="text" id="breed" required>
+
+      <label for="age">Age (in wks):</label>
+      <input type="number" id="age" required>
+
+      <label for="weight">Weight (in kg):</label>
+      <input type="number" id="weight" required>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" required>
+
+      <button type="submit">Create Profile</button>
+    </form>
+
+    <h2>Search Nearby Groomers</h2>
+    <form id="search-form">
+      <label for="location-search">Location:</label>
+      <input type="text" id="location-search" required>
+
+      <button type="submit">Search Groomers</button>
+    </form>
+
+    <div id="dog-profiles"></div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Dog Grooming Profile. All rights reserved.</p>
+  </footer>
+  </body>
+</html>
