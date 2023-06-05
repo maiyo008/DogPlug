@@ -7,6 +7,7 @@ from api.v1.views.index import *
 from api.v1.views.county import *
 from api.v1.views.dog import *
 from api.v1.views.groomer import *
+from api.v1.views.location import *
 from api.v1.views.owner import *
 from api.v1.views.review import *
 from api.v1.views.service import *
