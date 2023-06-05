@@ -5,6 +5,27 @@ The class will be used in serialization to json,
 and deserialization from json
 """
 import json
+import models
+from models.base_model import BaseModel
+from models.county import County
+from models.dog import Dog
+from models.groomer import Groomer
+from models.location import Location
+from models.owner import Owner
+from models.review import Review
+from models.service import Service
+from models.town import Town
+classes = {
+    "BaseModel": BaseModel,
+    "County": County,
+    "Dog": Dog,
+    "Groomer": Groomer,
+    "Location": Location,
+    "Owner": Owner,
+    "Review": Review,
+    "Service": Service,
+    "Town": Town
+}
 
 
 class FileStorage():
@@ -47,26 +68,7 @@ class FileStorage():
 
     def reload(self):
         """ Deserialize __objects from json file to __objects"""
-        from models.base_model import BaseModel
-        from models.county import County
-        from models.dog import Dog
-        from models.groomer import Groomer
-        from models.location import Location
-        from models.owner import Owner
-        from models.review import Review
-        from models.service import Service
-        from models.town import Town
-        classes = {
-            "BaseModel": BaseModel,
-            "County": County,
-            "Dog": Dog,
-            "Groomer": Groomer,
-            "Location": Location,
-            "Owner": Owner,
-            "Review": Review,
-            "Service": Service,
-            "Town": Town
-        }
+        
         try:
             with open(FileStorage.__file_path, "r") as f:
                 json_reload = json.load(f)
@@ -84,3 +86,30 @@ class FileStorage():
             )
             if key in FileStorage.__objects:
                 del FileStorage.__objects[key]
+    
+    def close(self):
+        """Call reload method to deserialize json to objects"""
+        self.reload()
+    
+    def get(self, cls, id):
+        """Returns an object specified by its class and its id"""
+        if cls not in classes.values():
+            return None
+        all_cls = models.storage.all(cls)
+        for value in all_cls.values():
+            if (value.id == id):
+                return value
+        return None
+    
+    def count(self, cls=None):
+        """ Counts the objects of a particular class,
+        if no class is specified counts all the objects in storage
+        """
+        all_class = classes.values()
+        if not cls:
+            count = 0
+            for clas in all_class:
+                count += len(models.storage.all(clas).values())
+        else:
+            count += len(models.storage.all(cls).values())
+        return count

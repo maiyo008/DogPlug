@@ -17,7 +17,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 classes = {
-            "BaseModel": BaseModel,
             "County": County,
             "Dog": Dog,
             "Groomer": Groomer,
@@ -89,3 +88,31 @@ class DBStorage():
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
         self.__session = Session
+    
+    def close(self):
+        """call remove() method on the private session attribute"""
+        self.__session.remove()
+    
+    def get(self, cls, id):
+        """Returns an object specified by its class and its id"""
+        if cls not in classes.values():
+            return None
+        all_cls = models.storage.all(cls)
+        for value in all_cls.values():
+            if (value.id == id):
+                return value.to_dict()
+        return None
+    
+    def count(self, cls=None):
+        """ Counts the objects of a particular class,
+        if no class is specified counts all the objects in storage
+        """
+        all_class = classes.values()
+        if not cls:
+            count = 0
+            for clas in all_class:
+                count += len(models.storage.all(clas).values())
+        else:
+            count = 0
+            count += len(models.storage.all(cls).values())
+        return count
