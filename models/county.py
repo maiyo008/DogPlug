@@ -33,7 +33,7 @@ class County(BaseModel, Base):
         def towns(self):
             """ Getter for list of town instances related to counties """
             town_list = []
-            all_towns = models.storage.all(Town)
+            all_towns = models.storage.all(town)
             for town in all_towns.value():
                 if town.county_id == self.id:
                     town_list.append(town)
