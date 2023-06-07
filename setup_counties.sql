@@ -1,0 +1,31 @@
+
+
+insert into counties (id, name, created_at, updated_at) values ('v1w2x3y4z5a6b7c8d9e0f1g2h3i4j5', 'Machakos', '2022-01-04 23:59:59', '2025-05-31 18:09:49');
+insert into counties (id, name, created_at, updated_at) values ('g1h2i3j4k5l6m7n8o9p0q1r2s3t4u5', 'Kiambu', '2022-01-16 16:45:00', '2023-09-22 06:00:00');
+insert into counties (id, name, created_at, updated_at) values ('s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5', 'Marsabit', '2022-01-10 15:30:45', '2023-12-25 08:00:00');
+insert into counties (id, name, created_at, updated_at) values ('u1v2w3x4y5z6a7b8c9d0e1f2g3h4i5', 'Kiambu', '2022-01-28 09:30:00', '2023-11-11 11:11:11');
+insert into counties (id, name, created_at, updated_at) values ('o1p2q3r4s5t6u7v8w9x0y1z2a3b4c5', 'Meru', '2022-01-30 12:00:00', '2025-06-15 10:30:15');
+insert into counties (id, name, created_at, updated_at) values ('b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5', 'Mandera', '2022-01-10 15:30:45', '2023-08-10 20:45:30');
+insert into counties (id, name, created_at, updated_at) values ('p1q2r3s4t5u6v7w8x9y0z1a2b3c4d5', 'Wajir', '2022-01-07 19:30:00', '2023-12-25 08:00:00');
+insert into counties (id, name, created_at, updated_at) values ('o1p2q3r4s5t6u7v8w9x0y1z2a3b4c6', 'Taita-Taveta', '2022-01-09 22:22:22', '2025-06-15 10:30:15');
+insert into counties (id, name, created_at, updated_at) values ('e1f2g3h4i5j6k7l8m9n0o1p2q3r4s5', 'Nandi', '2022-01-16 16:45:00', '2024-01-01 00:00:00');
+insert into counties (id, name, created_at, updated_at) values ('x1y2z3a4b5c6d7e8f9g0h1i2j3k4l5', 'Kirinyaga', '2022-01-01 12:00:00', '2023-03-05 08:15:30');
+insert into counties (id, name, created_at, updated_at) values ('q1r2s3t4u5v6w7x8y9z0a1b2c3d4e5', 'Samburu', '2022-01-19 19:19:19', '2024-11-11 11:11:11');
+insert into counties (id, name, created_at, updated_at) values ('z1a2b3c4d5e6f7g8h9i0j1k2l3m4n5', 'Embu', '2022-01-15 07:30:00', '2023-02-14 12:30:45');
+insert into counties (id, name, created_at, updated_at) values ('m1n2o3p4q5r6s7t8u9v0w1x2y3z4a5', 'Meru', '2022-01-18 10:10:10', '2025-06-15 10:30:15');
+insert into counties (id, name, created_at, updated_at) values ('g1h2i3j4k5l6m7n8o9p0q1r2s39t4u5', 'Wajir', '2022-01-21 13:13:13', '2023-03-05 08:15:30');
+insert into counties (id, name, created_at, updated_at) values ('m1n2o3p4q5r6s7t8u9v0w1x2y3z4a5', 'Kirinyaga', '2022-01-24 18:45:00', '2025-06-15 10:30:15');
+insert into counties (id, name, created_at, updated_at) values ('k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5', 'Nandi', '2022-01-06 14:20:00', '2025-04-20 16:20:00');
+insert into counties (id, name, created_at, updated_at) values ('j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5', 'Mandera', '2022-01-13 12:34:56', '2023-11-11 11:11:11');
+insert into counties (id, name, created_at, updated_at) values ('p1q2r3s4t5u6v7w8x9y0z1a2b3c4d5', 'Mandera', '2022-01-22 23:59:59', '2025-04-20 16:20:00');
+insert into counties (id, name, created_at, updated_at) values ('j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5', 'West Pokot', '2022-01-25 11:11:11', '2023-11-11 11:11:11');
+insert into counties (id, name, created_at, updated_at) values ('h1i2j3k4l5m6n7o8p9q0r1s2t3u4v5', 'Baringo', '2022-01-09 22:22:22', '2023-01-01 00:00:00');
+insert into counties (id, name, created_at, updated_at) values ('o1p2q3r4s5t6uk7v8w9x0y1z2a3b4c5', 'Kilifi', '2022-01-02 08:30:15', '2023-11-11 11:11:11');
+insert into counties (id, name, created_at, updated_at) values ('k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5', 'Taita-Taveta', '2022-01-20 08:00:00', '2025-05-31 18:09:49');
+insert into counties (id, name, created_at, updated_at) values ('s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5', 'Baringo', '2022-01-23 14:30:00', '2023-07-04 14:00:00');
+insert into counties (id, name, created_at, updated_at) values ('d1e2f3g4h5i6j7k8l9m0n1o2p3q4r5', 'Kirinyaga', '2022-01-11 09:00:00', '2023-04-20 16:20:00');
+insert into counties (id, name, created_at, updated_at) values ('i1j2k3l4m5n6o7p8q9r0s1t2u3v4w5', 'Lamu', '2022-01-26 22:22:22', '2025-06-15 10:30:15');
+insert into counties (id, name, created_at, updated_at) values ('s1t2u3v4w5x6y7z8a9b0c1d2e3f4g5', 'Nyeri', '2022-01-20 08:00:00', '2024-12-25 08:00:00');
+insert into counties (id, name, created_at, updated_at) values ('c1d2e3f4g5h6i7j8k9l0m1n2o3p4q5', 'Mombasa', '2022-01-19 19:19:19', '2024-09-22 06:00:00');
+insert into counties (id, name, created_at, updated_at) values ('c1d2e3f4g5h6i7j8k9l0m1n2o3p4q5', 'Isiolo', '2022-01-25 11:11:11', '2025-06-15 10:30:15');
+insert into counties (id, name, created_at, updated_at) values ('u1v2w3x4y5z6a7b8c9d0e1f2g3h4i5', 'Mandera', '2022-01-19 19:19:19', '2023-08-10 20:45:30');

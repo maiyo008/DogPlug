@@ -1,0 +1,10 @@
+insert into towns (id, created_at, updated_at, name, county_id) values ('aa9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-25 11:11:11', '2023-01-01 00:00:00', 'Nairobi', 'n1o2p3q4r5s6t7u8v9w0x1y2z3a4b5');
+insert into towns (id, created_at, updated_at, name, county_id) values ('bb9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-18 10:10:10', '2023-07-04 14:00:00', 'Mombasa', 'aa9637d7-c806-4b1f-b15b-ce0772972426');
+insert into towns (id, created_at, updated_at, name, county_id) values ('cc9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-06 14:20:00', '2023-03-05 08:15:30', 'Kisumu', 'd620617b-ce81-4fa1-be09-bb7ce950b465');
+insert into towns (id, created_at, updated_at, name, county_id) values ('dd9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-16 16:45:00', '2023-09-22 06:00:00', 'Eldoret', 'b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5');
+insert into towns (id, created_at, updated_at, name, county_id) values ('ee9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-24 18:45:00', '2025-05-31 18:09:49', 'Nakuru', 'b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5');
+insert into towns (id, created_at, updated_at, name, county_id) values ('ff9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-06 14:20:00', '2024-06-15 10:30:15', 'Thika', 'n1o2p3q4r5s6t7u8v9w0x1y2z3a4b5');
+insert into towns (id, created_at, updated_at, name, county_id) values ('gg9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-19 19:19:19', '2024-12-25 08:00:00', 'Malindi', 'aa9637d7-c806-4b1f-b15b-ce0772972426');
+insert into towns (id, created_at, updated_at, name, county_id) values ('hh9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-08 11:11:11', '2023-11-11 11:11:11', 'Kitale', '6faa9c56-28ee-4aaa-b67b-44ae1b9f5afc');
+insert into towns (id, created_at, updated_at, name, county_id) values ('ii9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-05 06:15:45', '2025-02-14 12:30:45', 'Machakos', '6faa9c56-28ee-4aaa-b67b-44ae1b9f5afc');
+insert into towns (id, created_at, updated_at, name, county_id) values ('jj9637d7-c806-4b1f-b15b-ce0772972426', '2022-01-30 12:00:00', '2025-05-31 18:09:49', 'Kericho', 'n1o2p3q4r5s6t7u8v9w0x1y2z3a4b5');
