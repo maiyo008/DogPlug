@@ -3,10 +3,15 @@
     padding: 0;
 }
 
+body{
+    background-color: #d3d3d3;
+    margin: 0;
+    padding: 0;
+}
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/dog2.jpeg);
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/dog2.jpeg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -20,7 +25,9 @@ nav{
 }
 
 nav img{
-    width: 150px;
+    width: 75px;
+    height: 75px;
+    background: transparent;
 }
 
 .nav-link{
@@ -125,11 +132,11 @@ nav .fa{
     .nav-link{
         padding: 30px;
     }
+    .row{
+        flex-direction: column;
+    }
 }
 
-main{
-    background-color: #D3D3D3;
-}
 /*------ features -----*/
 
 .features{
@@ -160,7 +167,7 @@ p{
 
 .feature-column{
     flex-basis: 31%;
-    background: #e5d3b3;
+    background: #d3d3d3;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
@@ -175,12 +182,6 @@ h3{
 
 .feature-column:hover{
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
-}
-
-@media(max-width: 700px) {
-    .row{
-        flex-direction: column;
-    }
 }
 
 /*---Services---*/
@@ -215,7 +216,7 @@ h3{
 }
 
 .layer:hover{
-    background: rgba(196,164,132,0.7);
+    background: rgba(211,211,211,0.7);
 }
 
 .layer h3{
@@ -233,7 +234,32 @@ h3{
     width: 80%;
 }
 
+/*---button for services---*/
+@media (min-width: 641px){
 
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+    .btn-section{
+        color: #f44336;
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid #f44336;
+        padding: 12px 34px;
+        font-size: 13px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+    .btn-section:hover{
+        border: 1px solid #f44336;
+        background: #fff;
+        transition: 1s;
+    }
 
 /*--footer--*/
 @media (min-width: 641px){
@@ -276,6 +302,11 @@ h3{
     .footer-links li+li{
         margin-left:24px
     }
+    .header-logo-image{
+        width: 150px;
+        height: 150px;
+        background: transparent;
+    }
 
 @media (min-width: 641px){
     .site-footer{
@@ -290,12 +321,14 @@ h3{
     .footer-brand,.footer-links,.footer-social-links,.footer-copyright{
         flex:50%;
         text-align: center;
+
     }
     .footer-brand,.footer-copyright{
         justify-content:flex-start
     }
     .footer-links,.footer-social-links{
-        justify-content:flex-end
+        justify-content:flex-end;
+        margin-bottom: 10px;
     }
     .footer-links{
         order:1;
