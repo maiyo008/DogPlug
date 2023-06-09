@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #d3d3d3;
+    color: black;
+}
+
+.about{
+    width: 100%;
+    min-height: 100vh;
+
+}
+.container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+.content-section{
+    width: 50%;
+    float: left;
+}
+.content-section2{
+    float: right;
+    width: 50%;
+}
+
+.content-section .title{
+    text-transform: uppercase;
+    font-size: 28px;
+}
