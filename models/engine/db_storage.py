@@ -116,3 +116,42 @@ class DBStorage():
             count = 0
             count += len(models.storage.all(cls).values())
         return count
+
+    def groomer_location(self):
+        """ It querries groomers with town names as locations """
+        objs = self.__session.query(
+            Groomer.name,
+            Groomer.email,
+            Groomer.contact,
+            Town.name.label('town_name')) \
+            .join(Location, Groomer.id == Location.groomer_id) \
+            .join(Town, Location.town_id == Town.id) \
+            .all()
+        return objs
+    
+    def search_groomer(self, location):
+        """ It returns searched groomers as per specified location """
+        specific_town_name = location
+
+        subquery = self.__session.query(
+            Groomer.name,
+            Groomer.email,
+            Groomer.contact,
+            Location.town_id
+        ).join(
+            Location, Groomer.id == Location.groomer_id
+        ).subquery()
+
+        objs = self.__session.query(
+            subquery.c.name,
+            subquery.c.email,
+            subquery.c.contact,
+            Town.name.label('town_name')
+        ).join(
+            Town, subquery.c.town_id == Town.id
+        ).filter(
+            Town.name == specific_town_name
+        ).all()
+
+        return objs
+        

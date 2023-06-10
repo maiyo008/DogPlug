@@ -37,9 +37,9 @@
       <button type="submit">Create Profile</button>
     </form>
     <h2>Search Nearby Groomers</h2>
-    <form id="search-form">
+    <form id="search-form" action="/search_groomers", method="POST">
       <label for="location-search">Location:</label>
-      <input type="text" id="location-search" required>
+      <input type="text" id="location-search" name="location" placeholder="towns..." required> 
 
       <button type="submit">Search Groomers</button>
     </form>

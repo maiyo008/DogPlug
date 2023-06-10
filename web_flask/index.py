@@ -58,6 +58,23 @@ def form():
     
     return render_template('form.html')
 
+@app.route('/search_groomers', methods=['POST'], strict_slashes=False)
+def search_groomers():
+    """ Searches for groomers by location"""
+    location = request.form.get("location")
+    groomers = storage.search_groomer(location)
+   
+    return render_template('groomer.html', groomers=groomers)
+
+@app.route('/groomers', strict_slashes=False)
+def groomer():
+    groomers = storage.groomer_location()
+    return  render_template(
+        'groomer.html',
+        groomers=groomers
+    )
+
+
 
 @app.route('/dogplug_services', strict_slashes=False)
 def dogplug_services():
