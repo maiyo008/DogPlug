@@ -15,9 +15,9 @@
         <h2>Groomer </h2>
         <p>Name: {{ groomer.name }}</p>
         <p>Email: {{ groomer.email }}</p>
-        <p>Contact: {{ groomer.email }}</p>
+        <p>Contact: {{ groomer.contact }}</p>
         <p>Location: {{ groomer.town_name }}</p>
-        <a href="/services" class="services-link">View Services</a>
+        <a href="/services/{{ groomer.id }}" class="services-link">View Services</a>
       </div>
       {% endfor %}
     </div>
