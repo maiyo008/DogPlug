@@ -75,16 +75,28 @@ def groomer():
     )
 
 
-
-@app.route('/dogplug_services', strict_slashes=False)
-def dogplug_services():
+@app.route('/services', strict_slashes=False)
+def services():
     """ Dogplug services"""
     services = storage.all(Service).values()
     services = sorted(services, key=lambda k: k.description)
     
     return render_template(
-        'dogplug_services.html',
+        'service.html',
         services=services
+    )
+
+@app.route('/services/<groomer_id>', strict_slashes=False, methods=['GET'])
+def groomer_services(groomer_id):
+    """ Filter services by groomers """
+    groomer_services = []
+    services = storage.groomer_services()
+    for service in services:
+        if service.id == groomer_id:
+            groomer_services.append(service)
+    return render_template(
+        'service.html',
+        services=groomer_services
     )
 
 

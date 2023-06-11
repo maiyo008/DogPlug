@@ -120,6 +120,7 @@ class DBStorage():
     def groomer_location(self):
         """ It querries groomers with town names as locations """
         objs = self.__session.query(
+            Groomer.id,
             Groomer.name,
             Groomer.email,
             Groomer.contact,
@@ -134,6 +135,7 @@ class DBStorage():
         specific_town_name = location
 
         subquery = self.__session.query(
+            Groomer.id,
             Groomer.name,
             Groomer.email,
             Groomer.contact,
@@ -154,4 +156,17 @@ class DBStorage():
         ).all()
 
         return objs
+    
+    def groomer_services(self):
+        """ Query groomer together with the services they offer"""
+        objs = self.__session.query(
+            Groomer.id,
+            Service.description,
+            Service.duration,
+            Service.price
+            ).join(
+                Service,
+                Groomer.id == Service.groomer_id
+            ).all()
         
+        return objs

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Plug</title>
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<main>
+<body>
+    <section class="features" section id="feature">
+        <h1>Services Offered</h1> 
+        <p>These are the services offered by our groomers</p> 
+
+        {% for service in services %}
+        <div class="feature-column">
+            <h3>{{ service.description }}</h3>
+            <p>duration: {{ service.duration }}</p>  
+            <p>Price: Ksh.{{ service.price }}</p> 
+           </div>
+        {% endfor %}
+
+        <div class="row">
+            <div class="feature-column">
+             <h3>Bath</h3>
+             <p>Our website allow you to create a your Dog's profile</p>   
+            </div>
+            <div class="feature-column">
+                <h3>Search for Dog Groomers near You</h3>
+                <p>Based on geographical location, search for the nearest dog grommers</p>   
+            </div>
+            <div class="feature-column">
+                <h3>Book an Appointment</h3>
+                <p>Book an Appointment with the grommer nearest to you</p>   
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts/main.js"></script>
+</body>
+</main>
+</html>
