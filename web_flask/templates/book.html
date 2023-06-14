@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dog Grooming Booking Service</title>
-  <link rel="stylesheet" href="styles/book.css">
+  <link rel="stylesheet" href="../static/styles/book.css">
   <script src="book.js"></script>
 </head>
 <body>
@@ -25,7 +25,9 @@
 
       <label for="service">Service:</label>
       <select id="service" required>
-        <option value="">Select a service</option>
+        {% for service in services %}
+        <option value="{{ service.description }}">Select a service</option>
+        {% endfor %}
         <option value="bathing">Bathing</option>
         <option value="haircutting">Haircutting</option>
         <option value="nail-trimming">Nail Trimming</option>
