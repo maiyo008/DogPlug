@@ -21,6 +21,10 @@ def close_db(error):
 def index():
     return render_template('index.html')
 
+@app.route('/about', strict_slashes=False)
+def about():
+    """ About page"""
+    return render_template('about.html')
 
 @app.route('/dogProfile', strict_slashes=False)
 def dogProfile():
