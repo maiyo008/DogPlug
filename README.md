@@ -2,7 +2,7 @@
 Dog Plug is a dog grooming booking service. Here we ensure that
 
 ## Table of Contents
-- [How to run Flask web framework](run-flask-web-framework)
+- [How to run Flask web framework](how-to-run-flask-web-framework)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
