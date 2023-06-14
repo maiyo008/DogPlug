@@ -1,5 +1,6 @@
 # DogPlug
-Dog Plug is a dog grooming booking service. Here we ensure that
+![Meme](https://imgur.com/CcJcdd9.png)
+<br>
 
 ## Table of Contents
 - [How to run Flask web framework](#how-to-run-flask-web-framework)
@@ -33,21 +34,54 @@ Press CTRL+C to quit
 To install Dog Plug on your local development environment, follow these steps:
 
 1. Clone the repository from GitHub:
+```
+git clone https://github.com/maiyo008/DogPlug.git
+```
+2. This project contains a console program that is used to interact with objects created. Before interacting with the objects, here is how to set up your environment:
+
+   #### Packages used for the project
+   ![flask](https://img.shields.io/badge/Flask-2.1.0-important)
+   ![sqlalchemy](https://img.shields.io/badge/SQLAlchemy-2.0.6-important)
+   #### Database used
+   ![myssql](https://img.shields.io/badge/mysql-8.0.33-important)
+   ![mysqlclient](https://img.shields.io/badge/mysqlclient-2.1.1-important)
+   
+   * Before runing the console program, setup mysql using [this](https://github.com/maiyo008/DogPlug/blob/main/setup_mysql_dev.sql)
 
 ## Usage
 Some examples of how to use DogPlug:
 
 1. **Create Profile:**
+![Dog profile](https://i.imgur.com/ypogDTE.png)
    - Navigate to the DogPlug landing page and click on create dog profile.
 
 2. **Search for a groomer near you:**
+![Filter groomers](https://i.imgur.com/jbluje1.png)
    - After.
 
-3. **Book an Appointment:**
-   - 
+   **Run console**
+   * To run the console:
+```
+vagrant@ubuntu-focal:~/DogPlug$ DOGPLUG_MYSQL_USER=dogplug_dev DOGPLUG_MYSQL_PWD=dogplug_dev_pwd DOGPLUG_MYSQL_HOST=localhost DOGPLUG_MYSQL_DB=dogplug_dev_db DOGPLUG_TYPE_STORAGE=db ./console.py
+Welcome to DogPlug
+(DogPlug)
+```
+   1. To create objects:
+   `create <Class name> <param 1> <param 2> <param 3>...`
+   <br>
+   Example:
+```
+(DogPlug)create County name="Turkana"
+2e62d7f6-9674-4dbf-b2c2-52972eeed016
+(DogPlug)
+```
+
 
 ## Contributing
-
+![flask](https://img.shields.io/badge/WebFramework-Flask-green) 
+![Languages](https://img.shields.io/badge/Languages-Python%2C%20HTML%26CSS%2C%20Javascript-orange)
+![Libraries](https://img.shields.io/badge/Libraries-JQuery-blueviolet)
+<br>
 This project was developed using the following technologies:
 
 - **HTML:** The standard markup language for creating the structure and content of web pages. [Learn more](https://developer.mozilla.org/en-US/docs/Web/HTML)
